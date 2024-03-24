@@ -15,9 +15,7 @@ if __name__ == "__main__":
     API_ENDPOINT = os.getenv("AOI_ENDPOINT")
 
     # Initialize the client
-    db = AstraDB(
-        token=TOKEN,
-        api_endpoint=API_ENDPOINT)
+    db = AstraDB(token=TOKEN, api_endpoint=API_ENDPOINT)
 
     print(f"Connected to Astra DB: {db.get_collections()}")
 
