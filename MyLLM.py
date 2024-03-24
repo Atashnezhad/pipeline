@@ -20,8 +20,13 @@ def generate_code(input_text):
 
     # Generate text
     with torch.no_grad():
-        output = model.generate(input_ids, max_length=100, num_return_sequences=1,
-                                early_stopping=True, temperature=0.7)
+        output = model.generate(
+            input_ids,
+            max_length=100,
+            num_return_sequences=1,
+            early_stopping=True,
+            temperature=0.7,
+        )
 
     # Decode and print generated text
     generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
@@ -32,4 +37,3 @@ def generate_code(input_text):
 if __name__ == "__main__":
     # generate_code("write a code in c# for hello world program.")
     generate_code("my name is jay and i am a software engineer and")
-
